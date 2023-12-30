@@ -1,0 +1,112 @@
+:root{
+    --white: #ffffff;
+    --lightPink: #f9f0ff;
+    --darkPurple: #2f1533;
+    --grayishPurple: #A22FD9;
+    --notKnowThisColor: #928394;
+}
+body{
+    background: url(./imgs/background-pattern-desktop.svg) var(--lightPink);
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: "Work Sans", Arial, Helvetica, sans-serif;
+}
+main{
+    position: absolute;
+}
+main{
+    top: 50%;
+    left: 50%;
+    padding: 0 2em 1em;
+    border-radius: .8em;
+    color: var(--darkPurple);
+    background: var(--white);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 .5em 2em #2f153344;
+}
+.faq h1{
+    margin-left: .5em;
+    font-size: 3em;
+}
+.titleQuestions, .faq{
+    display: flex;
+    align-items: center;
+}
+.titleQuestions, .titleQuestions img{
+    cursor: pointer;
+    justify-content: space-between;
+}
+h4{
+    margin-right: 2em;
+    transition: .2s;
+}
+h4:hover{
+    color: var(--grayishPurple);
+}
+.isOpenIcons{
+    position: relative;
+}
+.chk{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    clip: rect(0 0 0 0);
+}
+.chk:focus+.plus, .chk:focus~.minus{
+    outline: .0625em solid var(--darkPurple);
+    border-radius: 50%;
+}
+.minus, p, .checked+.plus{
+    display: none;
+}
+.checked~.minus, .titleQuestions:has(.checked)+p{
+    display: block;
+}
+p{
+    font-size: .9em;
+    line-height: 1.5em;
+    max-width: 33em;
+    color: var(--notKnowThisColor);
+}
+@media screen and (min-width: 66.875em) {
+    main{
+        min-width: 30em;
+    }
+}
+@media screen and (max-width: 40.9375em) {
+    main{
+        min-width: 17em;
+    }
+}
+@media screen and (max-width: 21.875em) {
+    body{
+        font-size: .9em;
+    }
+    main{
+        min-width: 14em;
+    }
+}
+@media screen and (max-width: 16.875em) {
+    body{
+        font-size: .75em;
+    }
+    main{
+        min-width: 11em;
+    }
+}
+
+@font-face{
+    font-family: "Work Sans";
+    font-weight: 400;
+    src: url(./fonts/static/WorkSans-Regular.ttf);
+}
+@font-face{
+    font-family: "Work Sans";
+    font-weight: 600;
+    src: url(./fonts/static/WorkSans-SemiBold.ttf);
+}
+@font-face{
+    font-family: "Work Sans";
+    font-weight: 700;
+    src: url(./fonts/static/WorkSans-Bold.ttf);
+}
